@@ -1,22 +1,22 @@
 <?php
 
+    const BELGI = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_'];
+
     function getHashPassword($string) :string {
         $string = str_replace(" ", "", $string);
-        $belgi = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_'];
         $leng = strlen($string);
 
         $result = $string[rand(0, $leng-1)];
         $result .= $string[rand(0, $leng-1)];
-        $result .= $belgi[rand(0, 10)];
+        $result .= BELGI[rand(0, 10)];
 
         return $result;
     }
 
     function getHashLogin($string) :string {
-        $belgi = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_'];
         $leng = strlen($string);
 
-        $string .= $belgi[rand(0, 10)];
+        $string .= BELGI[rand(0, 10)];
         $string .= $string[rand(0, $leng)];
         $string .= date("s");
 
@@ -45,12 +45,8 @@
 
 
     print_r(LoginPassword());
-
     print_r(LoginPassword());
-
     print_r(LoginPassword());
-
     print_r(LoginPassword());
-
     print_r(LoginPassword());
 ?>
