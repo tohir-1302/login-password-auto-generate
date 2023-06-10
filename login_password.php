@@ -1,6 +1,10 @@
 <?php
 
     const BELGI = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_'];
+    const Last_Name = 'Tohirbek';
+    const First_Name = 'Otaqulov';
+    const Date_Of_Birth = '2000-12-23';
+    const Father_is_Name = 'Otabek o`g`li';
 
     function getHashPassword($string) :string {
         $string = str_replace(" ", "", $string);
@@ -25,28 +29,23 @@
 
 
     function LoginPassword() : array {
-        $ism  = "Tohirbek";
-        $familiya = "Otaqulov";
-        $sharif = "Otabek o`g`li";
-        $tug_sana = "2000-12-23";
-
         $password = "";
         $login = "";
 
-        $password .= getHashPassword($ism);
-        $password .= getHashPassword($familiya);
-        $password .= getHashPassword($tug_sana);
-        $password .= getHashPassword($sharif);
+        $password .= getHashPassword(Last_Name);
+        $password .= getHashPassword(First_Name);
+        $password .= getHashPassword(Father_is_Name);
+        $password .= getHashPassword(Date_Of_Birth);
 
-        $login .= getHashLogin($ism);
+        $login .= getHashLogin(Last_Name);
         
         return [$login, $password];
     }
 
 
-    print_r(LoginPassword());
-    print_r(LoginPassword());
-    print_r(LoginPassword());
-    print_r(LoginPassword());
-    print_r(LoginPassword());
+    print_r(LoginPassword()); // 1
+    print_r(LoginPassword()); // 2
+    print_r(LoginPassword()); // 3
+    print_r(LoginPassword()); // 4
+    print_r(LoginPassword()); // 5
 ?>
